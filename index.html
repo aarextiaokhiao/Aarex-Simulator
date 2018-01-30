@@ -1,0 +1,29 @@
+<head>
+	<script>
+		prestiges=[0]
+		layer=0
+		
+		function prestige(num) {
+			for (i=0;i<num;i++) {
+				prestiges[i]=0
+				document.getElementById('pres'+i).innerHTML='Prestige '+(i+1)+' (x0)'
+			}
+			if (prestiges[num]==undefined) prestiges[num]=0
+			prestiges[num]++
+			document.getElementById('pres'+num).innerHTML='Prestige '+(num+1)+' (x'+prestiges[num]+')'
+			
+			if (num==layer) {
+				layer++
+				var newPres=document.createElement('button')
+				newPres.id='pres'+layer
+				newPres.innerHTML='Prestige '+(layer+1)+' (x0)'
+				document.body.appendChild(newPres)
+				newPres.value=layer
+				newPres.onclick=function(){prestige(parseInt(this.value))}
+			}
+		}
+	</script>
+</head>
+<body>
+	<button id='pres0' onclick='prestige(0)'>Prestige 1 (x0)</button>
+</body>
