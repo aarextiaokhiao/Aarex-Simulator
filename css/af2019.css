@@ -1,0 +1,18 @@
+body {
+	background: #191919
+}
+
+.prestige {
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 80px;
+	height: 80px;
+	font-size: 12px;
+}
+
+.prestige b {
+	font-size: 16px;
+    pointer-events: all
+}
